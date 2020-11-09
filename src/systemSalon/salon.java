@@ -316,7 +316,7 @@ public class salon extends javax.swing.JFrame {
    int sum =0;
    int price;
    int total;
-    int number=1;
+   int number;
   
 
    if (chk1.isSelected()){
@@ -329,7 +329,7 @@ public class salon extends javax.swing.JFrame {
        model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
 {
-      CutHair,price,number,total
+      CutHair,price, number,total
 
 });
     
@@ -337,12 +337,12 @@ public class salon extends javax.swing.JFrame {
     if(chk2.isSelected()){
         String Shaving =chk2.getText();
         price =30;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+        number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+5;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
 {
-     Shaving,price,number,total
+     Shaving,price, number,total
 
 });
         
@@ -351,7 +351,7 @@ public class salon extends javax.swing.JFrame {
     if(chk3.isSelected()){
         String cutDry =chk3.getText();
         price =100;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+      number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+5;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
@@ -365,7 +365,7 @@ public class salon extends javax.swing.JFrame {
     if(chk4.isSelected()){
         String colorHair =chk4.getText();
         price =150;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+         number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+7;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
@@ -379,7 +379,7 @@ public class salon extends javax.swing.JFrame {
       if(chk5.isSelected()){
         String fullHair =chk5.getText();
         price =250;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+        number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+10;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
@@ -394,12 +394,12 @@ public class salon extends javax.swing.JFrame {
       if(chk6.isSelected()){
         String cutClor=chk6.getText();
         price =100;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+      number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+5;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
 {
-     cutClor,price,number,total
+     cutClor,price, number,total
 
 });
         
@@ -408,12 +408,12 @@ public class salon extends javax.swing.JFrame {
         if(chk7.isSelected()){
         String shavecut=chk7.getText();
         price =80;
-        number =Integer.parseInt(txtnumber.getValue().toString());
+       number = Integer.parseInt(txtnumber.getValue().toString());
         total=price+5;
          model =(DefaultTableModel)jTable1.getModel();
         model.addRow(new Object[]
 {
-     shavecut,price,number,total
+     shavecut,price, number,total
 
 });
         
@@ -480,9 +480,10 @@ public class salon extends javax.swing.JFrame {
         try {
             JasperDesign jdesign = JRXmlLoader.load("E:\\SystemSalon\\src\\systemSalon\\report1.jrxml");
             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-            JasperPrint jprint = JasperFillManager.fillReport(jreport, a, con);
+               JasperPrint jprint = JasperFillManager.fillReport(jreport, a,con);
             JasperViewer.viewReport(jprint);
             
+         
             
         } catch (JRException ex) {
             Logger.getLogger(salon.class.getName()).log(Level.SEVERE, null, ex);
